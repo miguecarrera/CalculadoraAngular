@@ -1,0 +1,27 @@
+<h3 style="font-style: italic;">{{titulo}}</h3>
+
+<div class="calculo">
+    Primer número <input [(ngModel)]="num1">
+    <span *ngIf="num1">
+        Segundo número <input [(ngModel)]="num2">
+        <span *ngIf="verdad">
+            Resultado = {{resultado}}
+        </span>
+        <br><br>
+        <div class="but">
+            <button (click)="sumar()">Sumar</button>
+            <button (click)="restar()">Restar</button>
+            <button (click)="multiplicar()">Multiplicar</button>
+            <button (click)="dividir()">Dividir</button>
+            <button (click)="binario()">Convertir a binario</button>
+            <button (click)="limpiarHistorial()">Limpiar el historial</button>
+        </div>
+    </span>
+</div>
+
+<h4 *ngIf="historial.length > 0">Historial</h4>
+<table>
+    <tr *ngFor="let l of historial.reverse()">
+        <td>{{l}}</td>
+    </tr>
+</table>
